@@ -1,0 +1,70 @@
+{
+  "name": "multi-claw",
+  "description": "分布式 OpenClaw 控制技能 - 统一管理多台远程 OpenClaw 实例，批量执行命令并生成报告",
+  "version": "1.0.0",
+  "author": "wangxin",
+  "license": "MIT",
+  "homepage": "https://github.com/wangxin/multi-claw",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangxin/multi-claw.git"
+  },
+  "keywords": [
+    "openclaw",
+    "distributed",
+    "remote-control",
+    "multi-agent",
+    "cluster",
+    "batch",
+    "automation"
+  ],
+  "tools": [
+    "multi_claw_status",
+    "multi_claw_run", 
+    "multi_claw_report",
+    "multi_claw_add_machine",
+    "multi_claw_remove_machine",
+    "multi_claw_list"
+  ],
+  "config": {
+    "schema": {
+      "machines": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": { 
+              "type": "string",
+              "description": "机器名称标识"
+            },
+            "host": { 
+              "type": "string",
+              "description": "主机 IP 或域名"
+            },
+            "port": { 
+              "type": "integer", 
+              "default": 18789,
+              "description": "Gateway 端口"
+            },
+            "token": { 
+              "type": "string",
+              "description": "认证令牌"
+            },
+            "protocol": { 
+              "type": "string", 
+              "enum": ["http", "https"], 
+              "default": "http",
+              "description": "连接协议"
+            }
+          },
+          "required": ["name", "host", "token"]
+        }
+      }
+    }
+  },
+  "requirements": [
+    "OpenClaw 2026.3.31+",
+    "curl",
+    "jq"
+  ]
+}
