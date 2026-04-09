@@ -4,19 +4,26 @@
   "version": "1.0.0",
   "author": "wangxin",
   "license": "MIT",
-  "homepage": "https://github.com/wangxin/multi-claw",
+  "homepage": "https://github.com/wackyX/multi-claw",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wangxin/multi-claw.git"
+    "url": "https://github.com/wackyX/multi-claw.git"
   },
   "keywords": [
     "openclaw",
+    "openclaw-remote",
+    "openclaw-control",
+    "openclaw-cluster",
     "distributed",
     "remote-control",
     "multi-agent",
+    "multi-claw",
     "cluster",
     "batch",
-    "automation"
+    "automation",
+    "gateway",
+    "orchestration",
+    "server-management"
   ],
   "tools": [
     "multi_claw_status",
