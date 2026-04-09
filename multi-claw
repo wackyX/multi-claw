@@ -1,0 +1,4 @@
+#!/bin/bash
+# Multi-Claw 全局入口脚本
+
+exec ~/.openclaw/skills/multi-claw/multi-claw.sh "$@"

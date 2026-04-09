@@ -3,8 +3,13 @@
 
 set -e
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONFIG_FILE="${SCRIPT_DIR}/config.json"
+# 优先使用 ~/.openclaw/skills/multi-claw 作为配置目录
+if [[ -d "${HOME}/.openclaw/skills/multi-claw" ]]; then
+    CONFIG_DIR="${HOME}/.openclaw/skills/multi-claw"
+else
+    CONFIG_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+fi
+CONFIG_FILE="${CONFIG_DIR}/config.json"
 REPORT_DIR="${HOME}/.openclaw/reports/multi-claw"
 
 # 颜色
